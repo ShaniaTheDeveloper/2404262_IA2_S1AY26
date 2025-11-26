@@ -1,138 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- BASIC META SETTINGS -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Elite Kicks and Slides</title>
+    <title>Login | Elite Kicks & Slides</title>
 
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <!-- Google Fonts -->
+    <!-- GOOGLE FONTS: SPECIAL ELITE -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap"
-
       rel="stylesheet"
     />
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="../style.css" />
+    <style>
+      /* =====================================================================
+         GLOBAL STYLES — Applies to the whole page
+      ===================================================================== */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Special Elite", monospace;
+      }
+
+      /* Page structure and background */
+      body,
+      html {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(245, 245, 245, 0.95);
+      }
+
+      /* =====================================================================
+         LOGIN CONTAINER — White card holding everything
+      ===================================================================== */
+      .login-container {
+        width: 600px;
+        padding: 50px 35px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.95);
+        border: 1px solid #ccc;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* =====================================================================
+         LOGO SECTION
+      ===================================================================== */
+      .logo-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 25px;
+      }
+
+      /* Logo image styling */
+      .logo-section img {
+        width: 60%;
+        max-width: 350px;
+        height: auto;
+      }
+
+      /* =====================================================================
+         HEADINGS AND SMALL TEXT
+      ===================================================================== */
+      .login-container h1 {
+        text-align: center;
+        font-size: 28px;
+        margin-bottom: 10px;
+        color: #222;
+      }
+
+      .slogan {
+        text-align: center;
+        font-size: 16px;
+        margin-bottom: 20px;
+        color: #555;
+      }
+
+      .business-intro {
+        text-align: center;
+        font-size: 14px;
+        margin-bottom: 25px;
+        color: #444;
+        line-height: 1.5;
+      }
+
+      /* =====================================================================
+         FORM SECTION
+      ===================================================================== */
+      form#loginForm {
+        width: 100%;
+      }
+
+      /* Input labels */
+      label {
+        font-weight: 600;
+        margin-bottom: 6px;
+        color: #333;
+        display: block;
+      }
+
+      /* Username + Password fields */
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 12px 15px;
+        border-radius: 6px;
+        border: 2px solid #ccc;
+        margin-bottom: 15px;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      /* Inputs when selected */
+      input[type="text"]:focus,
+      input[type="password"]:focus {
+        border-color: #0077cc;
+        box-shadow: 0 0 8px rgba(0, 119, 204, 0.3);
+        outline: none;
+      }
+
+      /* Remember me checkbox */
+      .checkbox-group {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      /* =====================================================================
+         BUTTON STYLES
+      ===================================================================== */
+      button {
+        width: 100%;
+        padding: 14px 0;
+        background: linear-gradient(135deg, #0077cc, #005fa3);
+        color: #fff;
+        font-weight: bold;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        margin-bottom: 15px;
+      }
+
+      button:hover {
+        background: linear-gradient(135deg, #005fa3, #0077cc);
+      }
+
+      /* =====================================================================
+         EXTRA LINKS (Forgot password, Sign up)
+      ===================================================================== */
+      .forgot-password,
+      .signup-link {
+        text-align: center;
+        font-size: 14px;
+        margin-top: 12px;
+      }
+
+      .forgot-password a,
+      .signup-link a {
+        color: #0077cc;
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      .forgot-password a:hover,
+      .signup-link a:hover {
+        text-decoration: underline;
+      }
+    </style>
   </head>
+
   <body>
-    <!-- Navigation -->
-  <body>
-    
-   <header>
-       
-<nav>
-  <!-- LOGO LEFT -->
-  <div class="logo">
-    <img src="../Assets/Logo2.png" alt="Logo">
-  </div>
-
-  <!-- CENTER NAV LINKS -->
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="products.html">Products</a></li>
-    <li><a href="about1.html">About</a></li>
-    <li><a href="reviews.html">Reviews</a></li>
-    <li><a href="products.html"><i class="fa fa-search"></i></a></li>
-    <li>   <a href="cart.html"><i class="fa fa-shopping-cart"></i></a></li>
-  
-    <li><a href="signup.html"><i class="fa fa-user"></i></a></li>
-   
-  </ul>
-  </div>
-</nav>
-
-  </header>
-
-    <!-- Main Section -->
-    <main>
-      <div class="main" id="Home">
-        <div class="main_content">
-          <div class="main_text">
-            <h1>Elite Kicks & Slides <br /><span>Collection</span></h1>
-            <p>
-              Discover the finest collection of exclusive sneakers and slides
-              curated for both men and women. Elevate your footwear game with
-              exclusive designs and unmatched comfort.
-            </p>
-          </div>
-        </div>
-
-        <div class="video-slider">
-          <div class="video-track">
-            <video src="../Assets/BrownHermes.mp4" muted autoplay loop></video>
-            <video src="../Assets/GGSlides2.MP4" muted autoplay loop></video>
-            <video src="../Assets/GGSlides3.MP4" muted autoplay loop></video>
-            <video src="../Assets/GGSlides.MP4" muted autoplay loop></video>
-            <video src="../Assets/PoloSlides.MP4" muted autoplay loop></video>
-           <video src="../Assets/PnkWallabee.MP4" muted autoplay loop></video>
-            <video src="../Assets/NikeDunks.MP4" muted autoplay loop></video>
-            <img src="../Assets/RedNWhiteNike.JPG">
-            <img src="../Assets/BlacknRedNike.JPG">
-            <img src="../Assets/brownNwhite.jpg">
-            <video
-              src="../Assets/BeeswaxClarks.MP4"
-              muted
-              autoplay
-              loop
-            ></video>
-            <video src="../Assets/Shoe2.mp4" muted autoplay loop></video>
-            <video
-              src="../Assets/BlackNewBalance.MP4"
-              muted
-              autoplay
-              loop
-            ></video>
-            <video
-              src="../Assets/BlackShinyKickers.MP4"
-              muted
-              autoplay
-              loop
-            ></video>
-            <video src="../Assets/BlueWallabee.MP4" muted autoplay loop></video>
-            <video src="../Assets/BrownKickers.MP4" muted autoplay loop></video>
-          </div>
-        </div>
-
-        <!-- Social Icons -->
-        <div class="social_icon">
-          <a href="https://www.facebook.com"
-            ><i class="fa-brands fa-facebook-f"></i
-          ></a>
-          <a href="https://www.x.com"><i class="fa-brands fa-twitter"></i></a>
-          <a href="https://www.instagram.com/@elitekicks&slides"
-            ><i class="fa-brands fa-instagram"></i
-          ></a>
-          <a href="https://www.linkedin.com"
-            ><i class="fa-brands fa-linkedin"></i
-          ></a>
-          <a href="https://www.threads.com"
-            ><i class="fa-brands fa-threads"></i
-          ></a>
-          <a href="https://www.github.com"
-            ><i class="fa-brands fa-github"></i
-          ></a>
-        </div>
-        &nbsp;
-        <!-- Shop Now Button -->
-        <div class="button">
-          <a href="../Codes/products.html"
-            >SHOP NOW <i class="fa-solid fa-chevron-right"></i
-          ></a>
-        </div>
+    <!-- MAIN LOGIN CARD -->
+    <div class="login-container">
+      <!-- LOGO -->
+      <div class="logo-section">
+        <img
+          src="../Assets/Logo2.png"
+          alt="Elite Kicks & Slides Store Logo"
+          class="logo"
+        />
       </div>
-    </main>
-    <script src="../script.js" defer></script>
+
+      <!-- PAGE TITLE -->
+      <h1>Login</h1>
+      &nbsp; &nbsp;
+      <h2>Welcome to Elite Kicks & Slides</h2>
+
+      &nbsp; &nbsp;
+      <!-- SHORT TAGLINE -->
+      <p class="slogan">
+        Step up your style with premium sneakers & slides for all.
+      </p>
+      &nbsp; &nbsp;
+      <!-- BUSINESS DESCRIPTION TEXT -->
+      <p class="business-intro">
+        Discover the finest collection of luxury sneakers and slides curated for
+        both men and women. Elevate your footwear game with exclusive designs
+        and unmatched comfort.
+      </p>
+
+      <!-- =====================================================
+           LOGIN FORM
+      ===================================================== -->
+      <form id="loginForm">
+        <!-- USERNAME FIELD -->
+        <label for="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          required
+          autocomplete="username"
+        />
+
+        <!-- PASSWORD FIELD -->
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+          autocomplete="current-password"
+        />
+
+        <!-- REMEMBER ME (checkbox) -->
+        <div class="checkbox-group">
+          <input type="checkbox" id="rememberMe" name="rememberMe" />
+          <label for="rememberMe">Remember Me</label>
+        </div>
+
+        <!-- LOGIN BUTTON -->
+        <button type="submit">Login</button>
+
+        <!-- FORGOT PASSWORD LINK -->
+        <div class="forgot-password">
+          <a href="#">Forgot Your Password?</a>
+        </div>
+      </form>
+
+      <!-- SIGNUP REDIRECT -->
+      <div class="signup-link">
+        <p>New Shopper? <a href="signup.html">Create an account</a></p>
+      </div>
+    </div>
+
+    <script>
+      /* ============================================================
+   IA #2 — LOGIN PAGE JAVASCRIPT
+   This script covers:
+   2a. DOM Manipulation
+   2b. Event Handling
+   2c. Form Validation / Input Handling
+   2d. Basic Interactivity / Logic
+   ============================================================ */
+
+      /* ============================================================
+   (2b) EVENT LISTENER + (2a) DOM ACCESS
+   • Add a submit event listener to the login form
+   • getElementById() = proper DOM manipulation
+   ============================================================ */
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          // Prevent page refresh (2b — event handling)
+
+          /* ============================================================
+     (2a) DOM MANIPULATION
+     • Accessing form fields using "this.username" & "this.password"
+     • Trim removes unwanted spaces
+     ============================================================ */
+          const username = this.username.value.trim();
+          const password = this.password.value.trim();
+
+          /* ============================================================
+     (2c) FORM VALIDATION
+     • Checks if both fields are filled
+     • Could be expanded to include password/email rules
+     ============================================================ */
+          if (username && password) {
+            /* ============================================================
+       (2d) INTERACTIVITY + LOGIC
+       • If valid, greet user with a dynamic message
+       • Demonstrates control structures (if/else)
+       ============================================================ */
+            alert(`Welcome back, ${username}! Redirecting to home page...`);
+
+            // Redirect to home page (simple navigation logic)
+            window.location.href = "index..html";
+          } else {
+            /* ============================================================
+       (2c) VALIDATION FEEDBACK
+       • Gives user an error message
+       • Updates UI through alert (DOM output)
+       ============================================================ */
+            alert("Please fill in both fields.");
+          }
+        });
+    </script>
   </body>
 </html>
