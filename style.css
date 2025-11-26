@@ -1,0 +1,1012 @@
+/* ____________________________GLOBAL ______________________________*/
+/* Selector type: element selector */
+body {
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+  font-family: "Special Elite", monospace;
+}
+
+/* __________________________ NAVBAR ______________________________ */
+/* Selector type: descendant selector (element + element) */
+header nav {
+  width: 100%;
+  display: flex; /* Flexbox for layout */
+  align-items: center;
+  justify-content: space-between; /* Layout: logo left, links center */
+  padding: 15px 40px;
+  background: #0077cc; /* Theme color */
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  position: fixed; /* Sticky navbar */
+  top: 0;
+  left: 0;
+  z-index: 999;
+  box-sizing: border-box;
+}
+
+/* LOGO LEFT */
+/* Selector type: descendant selector (.class inside element) */
+header nav .logo img {
+  height: 110px; 
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.6));/*This declaration applies a drop shadow effect to the element it is applied to*/
+  transition: transform 0.3s;
+}
+
+/* Selector type: pseudo-class (:hover) */
+header nav .logo img:hover {
+  transform: scale(1.05);
+}
+
+/* NAV LINKS+ICONS CENTER */
+/* Selector type: descendant selector (.class inside element) */
+header nav .nav-links {
+  display: flex; /* Flexbox for spacing */
+  gap: 30px;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  align-items: center;
+}
+
+/* Selector type: descendant selector + element (li a) */
+header nav .nav-links li a {
+  text-decoration: none;
+  color: #fff; /* Theme color */
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+/* Selector type: pseudo-class (:hover) */
+header nav .nav-links li a:hover {
+  color: #00d2ff; /* Hover color for theme */
+  text-shadow: 0 0 8px #00d2ff;
+}
+
+/* ICONS (search, cart, user) */
+/* Selector type: descendant selector (.class + element inside) */
+header nav .nav-links li a i {
+  font-size: 20px; /* Icon size */
+}
+
+/* RESPONSIVE */
+/* Selector type: media query */
+@media (max-width: 900px) {
+  header nav {
+    flex-direction: column; /* Stack navbar for mobile */
+    padding: 15px 20px;
+    gap: 10px;
+  }
+
+  header nav .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  header nav .logo img {
+    height: 80px;
+  }
+}
+
+@media (max-width: 500px) {
+  header nav .nav-links {
+    flex-direction: column; /* Mobile vertical stack */
+    gap: 15px;
+  }
+}
+/*______________________________MAIN AREA _________________________________ */
+/* Selector type: element selector */
+main {
+  margin-top: 140px; /* Spacing under navbar */
+  display: flex; /* Flexbox layout */
+  justify-content: center; /* Center content horizontally */
+  flex-direction: column; /* Stack content vertically */
+}
+
+/* Selector type: class selector */
+.main_text {
+  text-align: center;
+  max-width: 900px; /* Restrict width for readability */
+  margin: 30px auto; /* Center with vertical spacing */
+}
+
+/* Selector type: descendant selector (element inside class) */
+.main_text h1 {
+  font-size: 50px; /* Main heading size */
+}
+
+/* Selector type: descendant selector (element inside class) */
+.main_text span {
+  color: #00aaff; /* Theme accent color */
+}
+
+/* ________________________________________ VIDEO SLIDER (Home Page) __________________________________________ */
+/* Selector type: class selector */
+.video-slider {
+  width: 80%; /* Responsive width */
+  height: 700px; /* Fixed height for layout consistency */
+  margin: 50px auto; /* Center horizontally */
+  overflow: hidden; /* Hide overflow for sliding effect */
+  border-radius: 20px; /* Rounded corners for theme consistency */
+  background: white;
+  position: relative;
+}
+
+
+/* Selector type: class selector */
+.video-track {
+  display: flex; /* Flexbox layout for horizontal slider */
+  gap: 20px; /* Space between videos/images */
+  width: max-content; /* Expand to fit all children */
+  animation: scroll 15s linear infinite;
+  
+}
+
+/* Selector type: descendant selector with group (video, img) */
+.video-track video,
+.video-track img {
+  width: 400px; /* Fixed width for all items */
+  height: 700px; /* Same height as container */
+  object-fit: cover; /* Maintain aspect ratio */
+  border-radius: 15px;  /*Rounded Corners*/
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+/* _______________________________________________________ SOCIAL ICONS ______________________________________________________ */
+/* Selector type: class selector */
+.social_icon {
+  margin-top: 35px;
+  text-align: center; /* Center social icons */
+}
+
+
+/* Selector type: descendant selector (.class a) */
+.social_icon a {
+  color: #0077cc; /* Theme color */
+  font-size: 24px;
+  margin: 10px; /* Spacing between icons */
+  transition: 0.3s; /* Smooth hover effect */
+}
+
+
+/* Selector type: pseudo-class (:hover) */
+.social_icon a:hover {
+  color: #00aaff; /* Hover theme accent color */ 
+}
+
+/* __________________________________________________________ BUTTON __________________________________________________________ */
+/* Selector type: class selector */
+.button {
+  text-align: center; 
+  margin-top: 20px; 
+}
+
+/* Selector type: descendant selector (.class a) */
+.button a {
+  background: #0077cc;
+  padding: 12px 30px;
+  border-radius: 10px; /*Rounded corners*/
+  color: #fff;
+  font-weight: bold;
+  transition: 0.3s;
+  text-decoration: none; /* Remove underline */
+}
+
+/* Selector type: pseudo-class (:hover) */
+.button a:hover {
+  background: #005999; /* Darker shade for hover*/
+}
+
+/* ____________________________________________________________ PRODUCT PAGE _______________________________________________________*/
+/* Selector type: class selector */
+.sections {
+  max-width: 1400px; /* Max width for large screens */
+  margin: 160px auto 20px auto; /* Center page content, space from navbar */
+  padding: 0 20px; /* Padding for mobile screens */
+}
+
+
+/* Selector type: descendant selector (.class h1) */
+.sections h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  color: #0077cc;
+}
+
+/* Selector type: class selector */
+/* Filter Buttons */
+.filter-buttons {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* Selector type: class selector */
+.filter-btn {
+  cursor: pointer;
+  padding: 10px 20px;
+  border: 1px solid #0077cc;
+  margin: 0 5px;
+  border-radius: 8px;
+  background: #fff;
+  font-weight: 600;
+  transition: 0.3s;
+  color: #0077cc;
+}
+
+/* Selector type: pseudo-class + multiple class (.hover, .active) */
+.filter-btn:hover,
+.filter-btn.active {
+  /* Inverted colors for active/hover */
+  background: #0077cc;
+  color: #fff;
+}
+
+/* Selector type: class selector */
+/* Product Grid */
+.box {
+  display: grid; /* CSS Grid layout for product cards */
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 30px; /* Space between cards */
+}
+
+/* Selector type: class selector */
+/* Product Card */
+.card {
+  background: #fff; /* White card background */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  display: flex; /* Flexbox for card layout */
+  flex-direction: column;
+  transition: transform .3s;
+}
+
+/* Selector type: pseudo-class (:hover) */
+.card:hover {
+  transform: scale(1.03); /* Slight zoom for hover effect*/
+}
+
+/* Selector type: class selector */
+/* Media Section */
+.media {
+  width: 100%;
+  height: 380px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Selector type: descendant selector (.media img, .media video) */
+.media img,
+.media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Selector type: descendant selector (.class .prev, .next) */
+/* Slider Buttons */
+.media .prev,
+.media .next {
+  position: absolute;
+  top: 50%; /* Vertically center */
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 50%; /* Circular buttons */
+  user-select: none;
+  transition: 0.2s;
+}
+
+
+/* Selector type: pseudo-class (:hover) */
+.media .prev:hover,
+.media .next:hover {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/* Selector type: descendant selector (.prev,) */
+.media .prev {
+  left: 10px;
+}
+/* Selector type: descendant selector (.next) */
+.media .next {
+  right: 10px;
+}
+
+/* Selector type: class selector */
+/* Product Text */
+.meta {
+  padding: 15px;
+  text-align: center;
+}
+
+/* Selector type: descendant selector (.meta p) */
+.meta p {
+  font-size: 18px;
+  margin: 8px 0;
+  font-weight: 600;
+}
+
+/* Selector type: descendant selector (.meta h3) */
+.meta h3 {
+  margin: 10px 0;
+  font-size: 22px;
+  color: #0077cc;
+}
+
+/* Dropdown */
+.size-select {
+  margin: 10px 0;
+  width: 60%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* Add to Cart Button */
+.btn {
+  margin: 15px auto 25px auto;
+  padding: 12px 0;
+  width: 80%;
+  border: none;
+  border-radius: 12px;
+  background: #0077cc;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.btn:hover {
+  background: #005999;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .media {
+    height: 300px;
+  }
+}
+
+@media (max-width: 500px) {
+  .media {
+    height: 250px;
+  }
+}
+
+
+
+/* __________________________________________________ CART PAGE ____________________________________________________ */
+/* Selector type: ID selector (#cartContainer) */
+#cartContainer {
+  display: flex; /* Flex layout for items */
+  flex-direction: column; /* Stack cart items vertically */
+  gap: 20px; /* Space between items */
+  margin-top: 20px;
+}
+
+/* Selector type: class selector (.cart-item) */
+.cart-item {
+  display: flex; /* Align item content horizontally */
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  flex-wrap: wrap; /* Wrap for smaller screens */
+  gap: 10px;
+  transition: 0.3s; /*Smooth Hove*/
+}
+
+/* Selector type: pseudo-class (:hover) */
+.cart-item:hover {
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+
+/* Selector type: descendant selector (.cart-item p) */
+.cart-item p {
+  margin: 0;
+  font-weight: 500;
+  flex: 2;
+  color: #0077cc;
+}
+
+/* Selector type: descendant selector (.cart-item span) */
+.cart-item span {
+  font-weight: 400;
+  color: #555;
+  margin-left: 8px;
+}
+
+/* Selector type: descendant selector (.cart-item button) */
+.cart-item button {
+  background: #0077cc;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+  flex: 0;
+}
+
+/* Selector type: pseudo-class (:hover) */
+.cart-item button:hover {
+  background: #005999;
+}
+
+/* Selector type: ID selector (#cartSummary) */
+#cartSummary {
+  max-width: 500px;
+  margin: 30px auto 10px auto;
+  padding: 20px;
+  border-radius: 15px;
+  background: #f0f8ff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  font-weight: 500;
+}
+
+/* Selector type: descendant selector (#cartSummary p) */
+#cartSummary p {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: #e6f2ff;
+}
+
+/* Selector type: multiple class selector (p.discount, p.tax) */
+#cartSummary p.discount {
+  background: #ffe6e6;
+  color: #d60000; /* Red text for discount warning */
+}
+
+#cartSummary p.tax {
+  background: #fff3e6;
+  color: #ff6600; /* Orange for taxes */
+}
+
+
+/* Selector type: descendant selector (#cartSummary h3) */
+#cartSummary h3 {
+  text-align: center;
+  padding: 12px;
+  margin-top: 15px;
+  background: #0077cc;
+  color: #fff;
+  border-radius: 12px;
+  font-size: 1.3rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Selector type: ID selector (#checkoutBtn) */
+#checkoutBtn {
+  font-family: 'Special Elite', monospace;
+  display: block;
+  margin: 30px auto;
+  padding: 12px 25px;
+  font-size: 1rem;
+  background: #0077cc;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Selector type: pseudo-class (:hover) */
+#checkoutBtn:hover {
+  background: #005999;
+}
+
+/* Selector type: class selector (.empty-cart) */
+.empty-cart {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 30px;
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .cart-item {
+    flex-direction: column; /* Stack cart item  */
+    align-items: flex-start;
+  }
+  .cart-item button {
+    align-self: flex-end; /* Keep button aligned right */
+  }
+  #cartSummary {
+    text-align: left;
+  }
+}
+
+
+
+
+/* __________________________________________ CHECKOUT PAGE __________________________________________ */
+/* Selector type: class selector (.checkout-container) */
+.checkout-container {
+  display: flex; /* Flex layout for form and summary */
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap; /* Responsive wrapping */
+  margin-top: 20px;
+}
+
+/* Selector type: class selector (.cart-summary) */
+.cart-summary {
+  flex: 1; 
+  min-width: 350px;
+  background: #f0f8ff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Selector type: descendant selector (.cart-summary h2) */
+.cart-summary h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0077cc;
+}
+
+/* Selector type: descendant selector (.cart-summary .cart-item) */
+.cart-summary .cart-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  background: #e6f2ff;
+  font-weight: 500;
+  color: #0077cc;
+}
+
+/* Selector type: descendant selector (.summary-detail) */
+.cart-summary .summary-detail {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-top: 10px;
+  background: #d9f0ff;
+}
+/* Selector type: descendant selector (.total) */
+.cart-summary .total {
+  text-align: right;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 12px;
+  background: #0077cc;
+  color: #fff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* SHIPPING & PAYMENT FORM */
+.shipping-form {
+  flex: 1;
+  min-width: 350px;
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.shipping-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0077cc;
+}
+
+.shipping-form label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: 600;
+}
+
+.shipping-form input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+.shipping-form input:focus {
+  border-color: #0077cc;
+  outline: none;
+}
+
+/* PAYMENT METHODS */
+.payment-methods {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.payment-methods label {
+  flex: 1;
+  background: #f5f5f5;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: 0.3s;
+}
+
+.payment-methods input[type="radio"] {
+  display: none;
+}
+
+.payment-methods input[type="radio"]:checked+label {
+  border-color: #ff3c00;
+  background: #fff;
+  font-weight: bold;
+}
+
+/* PAYMENT DETAILS */
+.payment-details {
+  display: none;
+  margin-top: 15px;
+}
+
+.payment-details.active {
+  display: block;
+}
+
+/* BUTTONS */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+  font-family: 'Special Elite', monospace;
+}
+
+.buttons button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.confirm {
+  font-family: 'Special Elite', monospace;
+  background: #ff3c00;
+  color: #fff;
+}
+
+.confirm:hover {
+  background: #e63600;
+}
+
+.cancel {
+   font-family: 'Special Elite', monospace;
+  background: #ccc;
+}
+
+.cancel:hover {
+  background: #aaa;
+}
+
+.clear {
+  font-family: 'Special Elite', monospace;
+  background: #555;
+  color: #fff;
+}
+
+.clear:hover {
+  background: #333;
+}
+
+.close {
+  font-family: 'Special Elite', monospace;
+  background: #222;
+  color: #fff;
+}
+
+.close:hover {
+  background: #444;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .checkout-container {
+    flex-direction: column;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+}
+
+
+/* __________________________________________________ ABOUT ___________________________________________________ */
+/* Selector type: class selector (.about-section) */
+.about-section {
+  display: flex; /* Flex layout for content + aside */
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px; /* Space between content and aside */
+  max-width: 1200px;
+  margin: 140px auto 60px auto;
+  padding: 0 20px;
+  flex-wrap: wrap;
+}
+
+/* Selector type: class selector (.about-content) */
+.about-content {
+  flex: 2;
+  min-width: 300px;
+}
+
+/* Selector type: descendant selector (.about-content h1) */
+.about-content h1 {
+  font-size: 3rem;
+  color: #0077cc;
+  margin-bottom: 20px;
+}
+
+/* Selector type: descendant selector (.about-content .highlight) */
+.about-content .highlight {
+  color: #00d2ff;
+  font-weight: bold;
+}
+
+/* Selector type: descendant selector (.about-content p) */
+.about-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Selector type: class selector (.social-links) */
+.social-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+/* Selector type: descendant selector (.social-links a) */
+.social-links a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #0077cc;
+  font-weight: 600;
+  transition: 0.3s;
+}
+/* Selector type: class selector (.about-aside) */
+/* Selector type: pseudo-class (:hover) */
+.social-links a:hover {
+  color: #00d2ff;
+}
+
+/* Selector type: class selector (.about-aside) */
+/* ASIDE STYLING */
+.about-aside {
+  flex: 1;
+  min-width: 250px;
+  background: #f0f8ff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+/* Selector type: descendant selector (.about-aside h2) */
+.about-aside h2 {
+  color: #0077cc;
+  margin-bottom: 15px;
+}
+
+/* Selector type: descendant selector (.about-aside p) */
+.about-aside p {
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* ________________________________________ FOOTER ____________________________________________*/
+/* Selector type: element selector (footer) */
+footer {
+  display: grid; /* Grid layout for sections */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  padding: 40px 20px;
+  background: #0077cc;
+  color: #fff;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Selector type: descendant selector (footer .footer-section) */
+footer .footer-section {
+  flex: 1;
+  min-width: 220px;
+}
+
+/* Selector type: descendant selector (footer .footer-section h3) */
+footer .footer-section h3 {
+  margin-bottom: 15px;
+  color: #00d2ff;
+}
+
+
+/* Selector type: descendant selector (footer a) */
+footer a {
+  display: block;
+  margin-bottom: 8px;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+/* Selector type: pseudo-class (:hover) */
+footer a:hover {
+  color: #00d2ff;
+}
+
+/* Selector type: descendant selector (footer button) */
+footer button {
+  font-family: 'Special Elite', monospace;
+  margin-top: 10px;
+  background: #005999;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Selector type: descendant selector (footer button a) */
+footer button a {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+/* Selector type: pseudo-class (:hover) */
+footer button:hover {
+  background: #003f73;
+}
+
+/* Selector type: class selector (.footer-bottom) */
+.footer-bottom {
+  display: flex;
+  width: 100%;
+  text-align: center;
+  margin-top: 25px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: 15px;
+  font-size: 0.95rem;
+}
+
+/*                              REVIEW                      */
+/* Selector type: universal selector (.reviews-page *) */
+.reviews-page * {
+  box-sizing: border-box;
+}
+
+/* Selector type: class selector (.review-section) */
+.review-section {
+  margin: auto;
+  padding: 0 1rem;
+  max-width: 900px;
+  text-align: center;
+}
+
+/* Selector type: class selector (.title) */
+.title {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: #0077cc;
+  margin-bottom: .5rem;
+}
+
+/* Selector type: class selector (.notes) */
+
+.notes {
+  font-size: 1.1rem;
+  color: rgb(150, 150, 150);
+  font-style: italic;
+}
+/* Selector type: class selector (.reviews) */
+.reviews {
+  margin: 2rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* Selector type: class selector (.review) */
+.review {
+  min-width: 260px;
+  max-width: 300px;
+}
+
+/* Selector type: class selector (.body-review) */
+.head-review {
+  margin: 1.75rem auto;
+  width: 150px;
+  height: 150px;
+}
+/* Selector type: descendant selector (.head-review img) */
+.head-review img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, .25);
+}
+/* Selector type: class selector (.body-review) */
+.body-review {
+  background-color: rgb(238, 238, 238);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.5);
+}
+
+
+/* Selector type: descendant selector (.name-review) */
+.name-review {
+  font-size: 1.4rem;
+  color: rgb(50, 50, 50);
+}
+
+/* Selector type: descendant selector (.place-review) */
+.place-review {
+  color: red;
+  font-style: italic;
+}
+
+/* Selector type: class selector (.rating) */
+
+.rating {
+  color: rgb(253, 180, 42);
+  margin: 1rem 0;
+}
+/* Selector type: descendant selector (.desc-review) */
+.desc-review {
+  color: rgb(120, 120, 120);
+  line-height: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+@media(max-width: 678px) {
+  .review {
+    margin-top: 1.5rem;
+  }rgb(104, 59, 59)
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Checkout | Elite Kicks & Slides </title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../style.css" />
+
+       <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap"
+
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+     <header>
+    
+          
+<nav>
+  <!-- LOGO LEFT -->
+  <div class="logo">
+    <img src="../Assets/Logo2.png" alt="Logo">
+  </div>
+
+  <!-- CENTER NAV LINKS -->
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="about1.html">About</a></li>
+    <li><a href="reviews.html">Reviews</a></li>
+    <li><a href="products.html"><i class="fa fa-search"></i></a></li>
+    <li>   <a href="cart.html"><i class="fa fa-shopping-cart"></i></a></li>
+  
+    <li><a href="signup.html"><i class="fa fa-user"></i></a></li>
+   
+  </ul>
+  </div>
+</nav>
+
+
+    
+  </header>
+    <div class="sections">
+      <h1>Checkout</h1>
+      <div class="checkout-container">
+        <!-- CART SUMMARY -->
+        <div class="cart-summary">
+          <h2>Order Summary</h2>
+          <div id="cartSummary"></div>
+          <div class="summary-detail" id="subtotalDiv"></div>
+          <div class="summary-detail" id="discountDiv"></div>
+          <div class="summary-detail" id="taxDiv"></div>
+          <div class="total" id="totalAmount">Total: $0</div>
+        </div>
+
+        <!-- SHIPPING & PAYMENT -->
+        <div class="shipping-form">
+          <h2>Shipping & Payment</h2>
+
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="John Doe" required />
+
+          <label for="address">Address</label>
+          <input
+            type="text"
+            id="address"
+            placeholder="123 Main Street"
+            required
+          />
+
+          <label for="city">City</label>
+          <input type="text" id="city" placeholder="New York" required />
+
+          <label for="zip">Zip / Postal Code</label>
+          <input type="text" id="zip" placeholder="10001" required />
+
+          <label for="payment">Payment Method</label>
+          <div class="payment-methods">
+            <input type="radio" id="visa" name="payment" value="Visa" checked />
+            <label for="visa"><i class="fa-brands fa-cc-visa"></i> Visa</label>
+
+            <input type="radio" id="amex" name="payment" value="Amex" />
+            <label for="amex"><i class="fa-brands fa-cc-amex"></i> Amex</label>
+
+            <input type="radio" id="paypal" name="payment" value="PayPal" />
+            <label for="paypal"
+              ><i class="fa-brands fa-paypal"></i> PayPal</label
+            >
+
+            <input type="radio" id="klarna" name="payment" value="Klarna" />
+            <label for="klarna"
+              ><i class="fa-solid fa-money-bill"></i> Klarna</label
+            >
+          </div>
+
+          <!-- PAYMENT DETAILS -->
+          <div id="visaDetails" class="payment-details active">
+            <label>Card Number</label
+            ><input type="text" placeholder="4111 1111 1111 1111" />
+            <label>Expiry</label><input type="text" placeholder="MM/YY" />
+            <label>CVC</label><input type="text" placeholder="123" />
+          </div>
+          <div id="amexDetails" class="payment-details">
+            <label>Card Number</label
+            ><input type="text" placeholder="3782 822463 10005" />
+            <label>Expiry</label><input type="text" placeholder="MM/YY" />
+            <label>CVC</label><input type="text" placeholder="1234" />
+          </div>
+          <div id="paypalDetails" class="payment-details">
+            <label>PayPal Email</label
+            ><input type="email" placeholder="email@example.com" />
+          </div>
+          <div id="klarnaDetails" class="payment-details">
+            <label>Klarna Email</label
+            ><input type="email" placeholder="email@example.com" />
+          </div>
+
+          <div class="buttons">
+            <button class="confirm" id="checkoutBtn">Confirm Order</button>
+            <button class="cancel" id="cancelBtn">Cancel</button>
+            <button class="clear" id="clearBtn">Clear Cart</button>
+            <button class="close" id="closeBtn">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../script.js" defer>
+      document.addEventListener("DOMContentLoaded", () => {
+    renderCartPage(); // Call the function when DOM is ready
+});
+
+    </script>
+  </body>
+</html>

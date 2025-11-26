@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Registration | Elite Kicks & Slides</title>
+
+    <!-- Google Font & Icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS -->
+    <style>
+      /* Fullscreen Background Video  */
+      #bgVideo {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        filter: brightness(70%);
+      }
+
+      /*  General Body Styling */
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Special Elite", monospace;
+        background: transparent;
+      }
+
+      header {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.85);
+        border-bottom: 1px solid #ccc;
+        padding: 10px;
+        font-weight: bold;
+        position: relative;
+        z-index: 2;
+        backdrop-filter: blur(10px);
+      }
+
+      /*  Page Layout */
+      .page-center-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: calc(100vh - 2.5rem);
+        padding: 20px;
+        position: relative;
+        z-index: 2;
+      }
+
+      main.container {
+        max-width: 900px;
+
+        width: 100%;
+        background: rgba(255, 255, 255, 0.92);
+        border-radius: 10px;
+        border: 1px solid #000;
+        padding: 30px 25px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(10px);
+      }
+
+      form#signupForm > h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-family: "Special Elite", monospace;
+        font-size: 28px;
+      }
+
+      /* Grid Form Layout */
+      .formgrid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px 25px;
+      }
+
+      .formgrid > div {
+        display: flex;
+        flex-direction: column;
+      }
+
+      label {
+        font-weight: bold;
+        margin-bottom: 6px;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 7px 10px;
+        font-family: "Special Elite", monospace;
+        font-size: 15px;
+        border: 1.5px solid #000;
+        border-radius: 4px;
+        box-sizing: border-box;
+        background-color: rgba(255, 255, 255, 0.85);
+      }
+
+      input[type="submit"] {
+        margin-top: 20px;
+        padding: 12px;
+        background-color: black;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-family: "Special Elite", monospace;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      input[type="submit"]:disabled {
+        background-color: #999;
+        cursor: not-allowed;
+      }
+
+      input[type="submit"]:hover:not(:disabled) {
+        background-color: #222;
+      }
+
+      .terms {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        margin-top: 10px;
+      }
+
+      p {
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      a {
+        text-decoration: none;
+        color: #0077cc;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .logo-section {
+        height: 200px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body onload="disableSubmit()">
+    <!--  Fullscreen Video Background  -->
+    <video autoplay muted loop playsinline id="bgVideo">
+      <source src="../Assets/BrownHermes.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="page-center-wrapper">
+      <main class="container">
+        <form id="signupForm">
+          <h1>Sign Up</h1>
+
+          <div class="logo-section">
+            <img
+              src="../Assets/Logo2.png"
+              alt="Elite Kicks and Slides Store Logo"
+            />
+          </div>
+          <!-- Welcome message and slogan -->
+          <h1>Welcome to Elite Kicks & Slides</h1>
+          <p class="slogan">
+            Step up your style with premium sneakers & slides for all.
+          </p>
+
+          <div class="formgrid">
+            <div>
+              <label for="fname">First Name</label>
+              <input
+                type="text"
+                id="fname"
+                name="fname"
+                placeholder="Enter your first name"
+                required
+              />
+            </div>
+
+            <div>
+              <label for="lname">Last Name</label>
+              <input
+                type="text"
+                id="lname"
+                name="lname"
+                placeholder="Enter your last name"
+                required
+              />
+            </div>
+
+            <div>
+              <label for="dob">Date of Birth</label>
+              <input
+                type="date"
+                id="dob"
+                name="birthdate"
+                min="1900-01-01"
+                max="2025-12-31"
+                required
+              />
+            </div>
+
+            <div>
+              <label for="phone">Phone</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="+1 (___) ___-____"
+                required
+              />
+            </div>
+
+            <div>
+              <label for="address">Address Line 1</label>
+              <input
+                type="text"
+                id="address"
+                name="address"
+                placeholder="123 Main Street, Savanna-la-Mar"
+                required
+              />
+            </div>
+
+            <div>
+              <label for="unit">Address Line 2</label>
+              <input
+                type="text"
+                id="unit"
+                name="unit"
+                placeholder="e.g. Apt 3C"
+              />
+            </div>
+
+            <div>
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                pattern=".+@gmail\.com"
+                placeholder="Enter your Gmail address"
+                required
+              />
+            </div>
+
+            <div>
+              <label for="username">Username</label>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Enter your username"
+                required
+              />
+            </div>
+
+            <div>
+              <label for="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+                required
+              />
+            </div>
+
+            <div>
+              <label for="confirmPassword">Confirm Password</label>
+              <input
+                type="password"
+                id="confirmPassword"
+                name="confirmPassword"
+                placeholder="Re-enter your password"
+                required
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="joinedDate">Joined Date</label>
+            <input type="date" id="joinedDate" name="joinedDate" readonly />
+          </div>
+
+          <div class="terms">
+            <input type="checkbox" id="terms" onchange="activateButton(this)" />
+            <p for="terms">I Agree to the Terms & Conditions</p>
+          </div>
+
+          <input type="submit" id="submit" value="Sign Up" disabled />
+
+          <p>Already a shopper? <a href="login.html">Login here</a></p>
+        </form>
+      </main>
+    </div>
+
+    <script>
+      /* ============================================================
+   IA #2 — JavaScript Requirements
+   This script covers:
+   - DOM Manipulation (2a)
+   - Event Handling (2b)
+   - Form Validation / Input Handling (2c)
+   - Basic Interactivity / Logic (2d)
+   ============================================================ */
+
+      /* ============================================================
+   (2b) Event Handling + (2a) DOM Access
+   disableSubmit()  
+   • Runs automatically when the body loads
+   • Disables the submit button until the user accepts Terms
+   ============================================================ */
+      function disableSubmit() {
+        document.getElementById("submit").disabled = true; // (2a) DOM manipulation
+      }
+
+      /* ============================================================
+   (2b) Event Handling + (2d) Logic
+   activateButton(checkbox)
+   • Triggered when the checkbox is clicked
+   • Enables submit only when Terms are checked
+   ============================================================ */
+      function activateButton(checkbox) {
+        document.getElementById("submit").disabled = !checkbox.checked; // (2d) logic
+      }
+
+      /* ============================================================
+   (2a) DOM Manipulation  
+   (2b) Event Listener  
+   (2c) Form Input Handling  
+   Automatically insert today's date into the Joined Date field
+   ============================================================ */
+      document.addEventListener("DOMContentLoaded", () => {
+        // (2b) Event listener
+        const joinedDateInput = document.getElementById("joinedDate");
+
+        if (joinedDateInput) {
+          const today = new Date();
+
+          // (2d) Basic logic & arithmetic (formatting date)
+          const yyyy = today.getFullYear();
+          const mm = String(today.getMonth() + 1).padStart(2, "0");
+          const dd = String(today.getDate()).padStart(2, "0");
+
+          joinedDateInput.value = `${yyyy}-${mm}-${dd}`; // (2a) DOM update
+        }
+      });
+    </script>
+  </body>
+</html>
